@@ -22,7 +22,6 @@ public class HangmanServer {
     private static final int SERVER_PORT = 5000;
     private Selector selector;
     private ServerSocketChannel ssc;
-    private boolean timeToSend = false;
 
 	/**
 	 * Run the server and derive in any clients is communicating

@@ -54,6 +54,9 @@ class ClientHandler extends Thread {
 
 			while(!incomingMessagesQueue.isEmpty()) {
 				String message = incomingMessagesQueue.poll();
+				
+				//System.out.println(clientName + " sends: " + message);
+				
 				String[] messageTokens = message.split(Constants.TCP_DELIMETER);
 				MessageTypes messageType = MessageTypes.valueOf(messageTokens[0].toUpperCase());
 
@@ -74,6 +77,7 @@ class ClientHandler extends Thread {
 						sendMessage(MessageTypes.STATUS, gameHandler.getGameStatus());
 					break;
 					case GUESS:
+						System.out.println(clientName + " guessed: " + messageTokens[1]);
 						try {
 							switch(gameHandler.checkString(messageTokens[1])) {
 								case COMPLETE:

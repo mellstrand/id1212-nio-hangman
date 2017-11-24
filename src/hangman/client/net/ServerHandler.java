@@ -35,7 +35,7 @@ public class ServerHandler implements Runnable {
 
 	private boolean connected = false;
 	private boolean connectionCompleted = false;
-	volatile boolean timeToSend = false;
+	private volatile boolean timeToSend = false;
 
 	/**
 	 *
